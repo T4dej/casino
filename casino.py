@@ -1,12 +1,19 @@
 # -*- coding: utf-8 -*-
 
-# import random
-# secret = random.randint(1, 101)       "Kot dodatek, da je bolj zanimivo lahko dodamo naključno število.
-#                                       Če dodamo naključno število, je potrebno izbrisati 7 vrstico"
+import random
+secret = random.randint(1, 101)
 
-secret = 25
-guess = int(raw_input("Uganite število med 1 in 50: "))
+guess = 0
+tr = 0
 
-if secret == guess:
-    print("Čestitamo! Uganili ste število!")
-else: print("Žal število ni pravilno, poizkusite ponovno. Število je bilo: "), secret
+while True:
+    guess = int(raw_input("Uganite število med 1 in 100: "))
+    tr = tr + 1
+
+    if secret == guess:
+        print("Čestitamo! Uganili ste število " + str(secret) + " v " + str(tr) + ". poizkusu!")
+        break
+    elif secret>guess:
+        print("Žal, iskano število je večje. Poizkusite ponovno.")
+    elif secret<guess:
+        print("Žal, iskano število je manjše. Poizkusite ponovno")
